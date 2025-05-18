@@ -1,0 +1,1 @@
+START /wait cmd /K npx office-addin-debugging start manifest.xml --prod --no-debug
