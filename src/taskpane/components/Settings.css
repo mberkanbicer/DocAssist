@@ -1,0 +1,110 @@
+.settings-modal .ant-modal-content {
+  padding: 24px;
+}
+
+.settings-container {
+  padding: 0;
+}
+
+.settings-form {
+  width: 100%;
+}
+
+.settings-form-item {
+  margin-bottom: 16px;
+}
+
+.provider-selector {
+  margin-bottom: 24px;
+}
+
+.provider-selector .ant-radio-group {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.provider-selector .ant-radio-button-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.provider-settings {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.provider-settings.ollama,
+.provider-settings.openrouter {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.settings-slider {
+  width: 100%;
+}
+
+.settings-buttons {
+  margin-top: 24px;
+  text-align: right;
+}
+
+/* Form field animations */
+.settings-form-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.settings-form-item.ant-form-item-hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Input field styles */
+.settings-form-item .ant-input,
+.settings-form-item .ant-input-password,
+.settings-form-item .ant-select-selector {
+  border-radius: 4px;
+}
+
+/* Select field styles */
+.settings-form-item .ant-select {
+  width: 100%;
+}
+
+/* Slider styles */
+.settings-form-item .ant-slider {
+  margin: 10px 6px;
+}
+
+/* Button styles */
+.settings-buttons .ant-btn {
+  min-width: 80px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .settings-modal .ant-modal-content {
+    padding: 16px;
+  }
+
+  .settings-form-item {
+    margin-bottom: 12px;
+  }
+
+  .provider-selector {
+    margin-bottom: 16px;
+  }
+}

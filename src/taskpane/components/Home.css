@@ -1,0 +1,27 @@
+.home-container {
+  padding: 24px;
+  background-color: #fafafa;
+  min-height: 100vh;
+  position: relative;
+}
+
+.settings-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #1890ff;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.settings-button:hover {
+  background-color: rgba(24, 144, 255, 0.1);
+  color: #40a9ff;
+}
+
+.settings-button:active {
+  background-color: rgba(24, 144, 255, 0.2);
+  color: #096dd9;
+} 

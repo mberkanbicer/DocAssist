@@ -1,0 +1,39 @@
+.loading-spinner {
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #0078d4;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading-spinner.small {
+  width: 20px;
+  height: 20px;
+}
+
+.loading-spinner.medium {
+  width: 30px;
+  height: 30px;
+}
+
+.loading-spinner.large {
+  width: 40px;
+  height: 40px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

@@ -1,0 +1,80 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license. -->
+<!-- See LICENSE in the project root for license information -->
+
+<!doctype html>
+<html lang="en" data-framework="typescript">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DocAssist</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <link href="./css/sample.css" rel="stylesheet" type="text/css" />
+    <link href="./css/taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="telemetry-container">
+        <img src="https://pnptelemetry.azurewebsites.net/pnp-officeaddins/samples/word-add-in-aigc-localhost" 
+             alt="Office Add-in Telemetry" />
+    </div>
+    <div id="container" class="container">
+    </div>
+
+    <!-- 
+        Fluent UI React v. 9 uses modern JavaScript syntax that is not supported in
+        Trident (Internet Explorer) or EdgeHTML (Edge Legacy), so this add-in won't
+        work in Office versions that use these webviews. The script below makes the 
+        following div display when an unsupported webview is in use, and hides the 
+        React container div. 
+    -->
+    <div id="tridentmessage" class="trident-message">
+        This add-in won't run in your version of Office. Please upgrade either to perpetual Office 2021 (or later) 
+        or to a Microsoft 365 account.
+    </div>
+    <script>
+        function isLegacyBrowser() {
+            const ua = navigator.userAgent;
+            console.log('User Agent:', ua); // Debug log
+            
+            // Check for Office version
+            if (window.Office && window.Office.context) {
+                console.log('Office context available'); // Debug log
+                return false;
+            }
+
+            // Check for specific browser engines
+            const isTrident = ua.indexOf('Trident/') !== -1;
+            const isEdgeHTML = ua.indexOf('Edge/') !== -1 && ua.indexOf('Edg/') === -1;
+            const isIE = ua.indexOf('MSIE ') !== -1 || ua.indexOf('Trident/') !== -1;
+            
+            console.log('Browser checks:', { isTrident, isEdgeHTML, isIE }); // Debug log
+            
+            return isTrident || isEdgeHTML || isIE;
+        }
+
+        // Wait for Office.js to load
+        Office.onReady(() => {
+            console.log('Office.js is ready'); // Debug log
+            if (!isLegacyBrowser()) {
+                var tridentMessage = document.getElementById("tridentmessage");
+                var normalContainer = document.getElementById("container");
+                tridentMessage.style.display = "none";
+                normalContainer.style.display = "block";
+            }
+        });
+
+        // Initial check
+        if (isLegacyBrowser()) {
+            var tridentMessage = document.getElementById("tridentmessage");
+            var normalContainer = document.getElementById("container");
+            tridentMessage.style.display = "block";
+            normalContainer.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

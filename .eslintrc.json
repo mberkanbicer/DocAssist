@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "office-addins"
+  ],
+  "extends": [
+    "plugin:office-addins/react"
+  ],
+  "overrides": [
+    {
+      "files": ["webpack.config.js"],
+      "parserOptions": {
+        "project": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+.text-processor {
+  padding: 24px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.section-title {
+  margin-bottom: 20px !important;
+  color: #262626;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+}
+
+.text-area-container {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 24px;
+  transition: all 0.3s;
+}
+
+.text-area-container:hover {
+  border-color: #d9d9d9;
+}
+
+.text-area {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  transition: all 0.3s;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 12px;
+}
+
+.text-area:hover {
+  border-color: #40a9ff;
+}
+
+.text-area:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.controls {
+  width: 100%;
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+
+.model-select,
+.action-select,
+.language-select,
+.custom-prompt {
+  width: 100%;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.model-select .ant-select-selector,
+.action-select .ant-select-selector,
+.language-select .ant-select-selector {
+  border-radius: 6px !important;
+  height: 40px !important;
+  padding: 4px 12px !important;
+}
+
+.model-select .ant-select-selection-item,
+.action-select .ant-select-selection-item,
+.language-select .ant-select-selection-item {
+  line-height: 32px !important;
+}
+
+.custom-prompt {
+  height: 40px;
+  border-radius: 6px;
+  padding: 4px 12px;
+}
+
+.process-button {
+  width: 100%;
+  margin-top: 24px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+  transition: all 0.3s;
+}
+
+.process-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.process-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+} 

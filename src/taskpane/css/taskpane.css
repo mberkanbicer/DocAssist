@@ -1,0 +1,14 @@
+.telemetry-container {
+  height: 1px;
+  width: 1px;
+}
+
+.trident-message {
+  display: none;
+  padding: 10px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+} 
